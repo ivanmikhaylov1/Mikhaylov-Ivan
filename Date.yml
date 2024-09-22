@@ -2,15 +2,18 @@ name: Date
 
 on:
   push:
-    branches: [ master ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ master ]
+    branches: [ "main" ]
+
+  workflow_dispatch :
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v4
     - name: Get current datetime
       run: |
-        CURRENTDATETIME=`date +"%A, %b %d, %Y %H:%M:%S"`
-        echo Current Date and Time is: ${CURRENTDATETIME}
+        CURRENTDATETIME=$(date)
+        echo "Current date and time is: ${CURRENTDATETIME}"
