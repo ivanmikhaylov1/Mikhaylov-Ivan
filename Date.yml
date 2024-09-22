@@ -1,16 +1,18 @@
-name: Date
+name: MyFirstCI
 
 on:
   push:
-    branches: [ master ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ master ]
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - name: Get current datetime
-      run: |
-        CURRENTDATETIME=`date +"%A, %b %d, %Y %H:%M:%S"`
-        echo Current Date and Time is: ${CURRENTDATETIME}
+      - uses: actions/checkout@v4
+      - name: Run a multi-line script
+        run: |
+          current_date_time=$(date)
+          echo "Current date and time: $current_date_time"
