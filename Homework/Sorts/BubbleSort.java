@@ -1,8 +1,8 @@
-package Homework;
+package Homework.Sorts;
 
 import java.util.List;
 
-class BubbleSort {
+public class BubbleSort {
   private final int maxElements;
 
   public BubbleSort(int maxElements) {

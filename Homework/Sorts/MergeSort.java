@@ -1,4 +1,4 @@
-package Homework;
+package Homework.Sorts;
 
 import java.util.*;
 
